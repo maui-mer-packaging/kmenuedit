@@ -1,0 +1,61 @@
+Name         : kde5-kmenuedit
+Version      : 5.0.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE menu editor
+Description  : |
+  KDE menu editor
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kde5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-ki18n-devel
+    - kf5-kxmlgui-devel
+    - kf5-kdbusaddons-devel
+    - kf5-kiconthemes-devel
+    - kf5-kio-devel
+    - kf5-sonnet-devel
+    - kf5-kdelibs4support-devel
+    - kf5-kdoctools-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5PrintSupport
+Requires:
+    - kde5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING COPYING.DOC"
+    - "%{_kde5_bindir}/kmenuedit"
+    - "%{_kde5_libdir}/libkdeinit5_kmenuedit.so"
+    - "%{_kde5_datadir}/kmenuedit"
+    - "%{_datadir}/applications/kmenuedit.desktop"
+    - "%{_datadir}/doc/HTML/en/kmenuedit"
+    - "%{_datadir}/icons/hicolor/*/actions/kmenuedit.png"
