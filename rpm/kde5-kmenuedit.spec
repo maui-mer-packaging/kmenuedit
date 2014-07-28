@@ -87,7 +87,7 @@ desktop-file-install --delete-original       \
 %{_kde5_datadir}/kmenuedit
 %{_datadir}/applications/kmenuedit.desktop
 %{_datadir}/doc/HTML/en/kmenuedit
-%{_datadir}/icons/hicolor/*/actions/kmenuedit.png
+%{_datadir}/icons/*
 # >> files
 # << files
 
