@@ -40,7 +40,6 @@ BuildRequires:  kio-devel
 BuildRequires:  sonnet-devel
 BuildRequires:  kdelibs4support-devel
 BuildRequires:  kdoctools-devel
-BuildRequires:  desktop-file-utils
 
 %description
 KDE menu editor
@@ -71,17 +70,13 @@ rm -rf %{buildroot}
 # >> install post
 # << install post
 
-desktop-file-install --delete-original       \
-  --dir %{buildroot}%{_datadir}/applications             \
-   %{buildroot}%{_datadir}/applications/*.desktop
-
 %files
 %defattr(-,root,root,-)
 %doc COPYING COPYING.DOC
 %{_kf5_bindir}/kmenuedit
 %{_kf5_libdir}/libkdeinit5_kmenuedit.so
 %{_kf5_sharedir}/*
-%{_datadir}/applications/kmenuedit.desktop
+%{_kf5_sharedir}/applications/*.desktop
 %{_kf5_htmldir}/en/kmenuedit
 %{_kf5_iconsdir}/*
 # >> files
