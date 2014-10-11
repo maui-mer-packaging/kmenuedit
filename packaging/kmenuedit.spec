@@ -10,7 +10,7 @@ Name:       kmenuedit
 
 Summary:    KDE menu editor
 Version:    5.1.0
-Release:    1
+Release:    2
 Group:      System/Base
 License:    GPLv2+
 URL:        http://www.kde.org
